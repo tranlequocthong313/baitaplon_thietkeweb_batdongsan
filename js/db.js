@@ -1,6 +1,6 @@
-const categoryURL = "/data/categories.json";
-const realEstateURL = "/data/real_estates.json";
-const newsURL = "/data/news.json";
+const categoryURL = "https://tranlequocthong313.github.io/btl_thietkeweb_batdongsan/data/categories.json";
+const realEstateURL = "https://tranlequocthong313.github.io/btl_thietkeweb_batdongsan/data/real_estates.json";
+const newsURL = "https://tranlequocthong313.github.io/btl_thietkeweb_batdongsan/data/news.json";
 
 let categories = [];
 let realEstates = [];
