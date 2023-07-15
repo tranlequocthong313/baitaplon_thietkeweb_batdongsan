@@ -4,7 +4,7 @@
 
 #real_estate_list > .real_estate_item {
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
     margin: 20px auto;
     border-radius: 8px;
     box-shadow: 0 2px 4px var(--shadow-color);

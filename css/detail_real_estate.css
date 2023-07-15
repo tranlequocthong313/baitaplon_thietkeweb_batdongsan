@@ -61,3 +61,18 @@
     margin: 4px 0;
 }
 
+@media (max-width: 480px) {
+    .detail_real_estate_container {
+        flex-direction: column;
+    }
+
+    .detail_real_estate_container > .detail_real_estate_content {
+        width: 100%;
+    }
+
+    .detail_real_estate_container > .detail_real_estate_author_container {
+        width: 100%;
+        margin: 0;
+    }
+}
+

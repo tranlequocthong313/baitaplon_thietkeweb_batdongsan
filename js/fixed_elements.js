@@ -1,11 +1,10 @@
-import { handleError } from "./helper.js";
-import { getCategories } from "./db.js";
+import {handleError} from "./helper.js";
+import {getCategories} from "./db.js";
 
 const initNavigation = () => {
     const navContainer = document.createElement('div');
-    const navTemplate = document.createElement('template');
     navContainer.classList.add("nav_container");
-    navTemplate.innerHTML = `
+    navContainer.innerHTML = `
         <h1 class="heading_title">
             <a href="/html">Bất động sản</a>
         </h1>
@@ -13,16 +12,36 @@ const initNavigation = () => {
 
     getCategories()
         .then(categories => {
-            let categoryHTML = "";
+            const navList = document.createElement('ul');
+            navList.classList.add('nav_list')
             for (let category of categories) {
-                categoryHTML += `
-                        <div class="nav_item">
-                            <a href="${category.href}">${category.name}</a> 
-                        </div>
-                `;
+                const li = document.createElement('li');
+                li.classList.add('nav_item');
+                li.classList.add('opacity_hover');
+                li.onclick = () => location.href = category.href;
+                li.innerHTML = category.name;
+                navList.appendChild(li);
             }
-            navTemplate.innerHTML += categoryHTML;
-            navContainer.innerHTML = navTemplate.innerHTML;
+            navContainer.appendChild(navList);
+            const hamburgerMenu = document.createElement('button');
+            hamburgerMenu.classList.add('hamburger_menu');
+            hamburgerMenu.innerHTML = `
+                    <img src="../img/hamburger_icon.png" alt="hamburger"> 
+            `
+            navContainer.appendChild(hamburgerMenu);
+
+            hamburgerMenu.onclick = () => {
+                if (window.getComputedStyle(navList).display === 'none') {
+                    navList.classList.add('show');
+                } else {
+                    navList.classList.remove('show');
+                }
+            }
+
+            window.onresize = () => {
+                navList.classList.remove('show');
+            }
+
         })
         .catch(handleError)
         .finally(() => document.body.insertBefore(navContainer, document.body.firstChild));
