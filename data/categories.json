@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "Nhà đất bán",
+    "href": "../html/list_real_estate.html?type=0"
+  },
+  {
+    "id": 2,
+    "name": "Nhà đất cho thuê",
+    "href": "../html/list_real_estate.html?type=1"
+  },
+  {
+    "id": 3,
+    "name": "Tin tức",
+    "href": "../html/news.html"
+  },
+  {
+    "id": 4,
+    "name": "Đăng nhập",
+    "href": "#"
+  },
+  {
+    "id": 5,
+    "name": "Đăng ký",
+    "href": "#"
+  }
+]

@@ -1,0 +1,54 @@
+#real_estate_list {
+    list-style: none;
+}
+
+#real_estate_list > .real_estate_item {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+#real_estate_list > .real_estate_item > .thumbnails {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+#real_estate_list > .real_estate_item > .thumbnails > img {
+    width: 60%;
+    border-radius: 8px;
+}
+
+#real_estate_list > .real_estate_item > .thumbnails > div {
+    display: flex;
+    flex-direction: column;
+}
+
+#real_estate_list > .real_estate_item > .thumbnails > div > img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+#real_estate_list > .real_estate_item > .thumbnails > div > div {
+    display: flex;
+    height: 100%;
+}
+
+#real_estate_list > .real_estate_item > .thumbnails > div > div > img {
+    width: 50%;
+}
+
+#real_estate_list > .real_estate_item .content {
+    padding: 16px;
+}
+
+#real_estate_list > .real_estate_item .content > .real_estate_item_spec {
+    display: flex;
+}
+
+#real_estate_list > .real_estate_item .content > .real_estate_item_spec > p {
+    margin: 0 10px;
+}
+
