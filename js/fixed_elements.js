@@ -6,7 +6,7 @@ const initNavigation = () => {
     navContainer.classList.add("nav_container");
     navContainer.innerHTML = `
         <h1 class="heading_title">
-            <a href="/html">Bất động sản</a>
+            <a href="/html/">Bất động sản</a>
         </h1>
     `;
 
