@@ -1,6 +1,8 @@
-const categoryURL = "/data/categories.json";
-const realEstateURL = "/data/real_estates.json";
-const newsURL = "/data/news.json";
+import { API_URL } from './constant.js';
+
+const categoryURL = API_URL + "/data/categories.json";
+const realEstateURL = API_URL + "/data/real_estates.json";
+const newsURL = API_URL + "/data/news.json";
 
 let categories = [];
 let realEstates = [];
