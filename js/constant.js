@@ -8,7 +8,7 @@ const NEWS_TYPE = Object.freeze({
     NEWS: 1,
 });
 
-const API_URL = location.href.indexOf('github') != -1 ? 'https://tranlequocthong313.github.io/btl_thietkeweb_batdongsan' : '';
+const API_URL = location.href.indexOf('github') != -1 ? 'https://tranlequocthong313.github.io/baitaplon_thietkeweb_batdongsan' : '';
 
 export {
     REAL_ESTATE_TYPES,
