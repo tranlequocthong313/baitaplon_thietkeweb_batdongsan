@@ -271,22 +271,12 @@ body ul {
 }
 
 @media (max-width: 820px) {
-    .real_estate_container {
-        justify-content: center;
-    }
-
     .real_estate_container > div {
         width: 40%;
     }
-}
 
-@media (max-width: 480px) {
     .real_estate_container {
         justify-content: center;
-    }
-
-    .real_estate_container > div {
-        width: 100%;
     }
 
     .content_container .home_news_container {
@@ -301,10 +291,6 @@ body ul {
 
     .content_container .home_news_container > .home_news_list {
         width: 100%;
-    }
-
-    .search_input {
-        width: 200px;
     }
 
     .nav_container {
@@ -336,5 +322,19 @@ body ul {
 
     .content_container {
         margin: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .real_estate_container > div {
+        width: 100%;
+    }
+
+    .real_estate_container {
+        justify-content: center;
+    }
+
+    .search_input {
+        width: 200px;
     }
 }

@@ -1,5 +1,5 @@
 import { getRealEstate } from "./db.js";
-import {formatPrice, getFullAddress, handleError, alertHaventHandledFeature, getQuery} from "./helper.js";
+import { formatPrice, getFullAddress, handleError, alertHaventHandledFeature, getQuery } from "./helper.js";
 import Slider from "./slider.js";
 
 const id = getQuery('id');
@@ -7,12 +7,17 @@ const id = getQuery('id');
 const changeBigImage = (img) => {
     const bigImage = document.querySelector('.detail_real_estate_big_img');
     bigImage.src = img.src;
-}
+};
 
 getRealEstate(id)
     .then(realEstate => {
-        const container = document.querySelector(".detail_real_estate_container");
-        container.innerHTML = `
+        detailPage(realEstate);
+    })
+    .catch(handleError);
+
+function detailPage(realEstate) {
+    const container = document.querySelector(".detail_real_estate_container");
+    container.innerHTML = `
             <div class="detail_real_estate_content">
                 <img class="detail_real_estate_big_img" src="${realEstate.images[0]}" alt="${realEstate.title}"/>
                 <div class="detail_real_estate_slide"></div>
@@ -55,18 +60,18 @@ getRealEstate(id)
             </div>
         `;
 
-        const specs = container.querySelector('.detail_real_estate_specs');
-        Object.entries(realEstate.specs).forEach(([key, value]) => {
-            const div = document.createElement('div');
-            div.classList.add("detail_real_estate_specs_item");
-            div.innerHTML = `
+    const specs = container.querySelector('.detail_real_estate_specs');
+    Object.entries(realEstate.specs).forEach(([key, value]) => {
+        const div = document.createElement('div');
+        div.classList.add("detail_real_estate_specs_item");
+        div.innerHTML = `
                 <strong>${key}: </strong>
                 <span>${value}</span>
             `;
-            specs.appendChild(div);
-        });
-        const slider = document.querySelector('.detail_real_estate_slide');
-        slider.appendChild(Slider(realEstate.images, changeBigImage));
-    })
-    .catch(handleError);
+        specs.appendChild(div);
+    });
+
+    const slider = document.querySelector('.detail_real_estate_slide');
+    slider.appendChild(Slider(realEstate.images, changeBigImage));
+}
 
