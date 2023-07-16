@@ -1,19 +1,20 @@
-import {handleError} from "./helper.js";
-import {getCategories} from "./db.js";
+import { handleError } from "./helper.js";
+import { getCategories } from "./db.js";
+import { API_URL } from './constant.js';
 
 const initNavigation = () => {
     const navContainer = document.createElement('div');
     navContainer.classList.add("nav_container");
     navContainer.innerHTML = `
         <h1 class="heading_title">
-            <a href="/html/">Bất động sản</a>
+            <a href="${API_URL}/html/">Bất động sản</a>
         </h1>
     `;
 
     getCategories()
         .then(categories => {
             const navList = document.createElement('ul');
-            navList.classList.add('nav_list')
+            navList.classList.add('nav_list');
             for (let category of categories) {
                 const li = document.createElement('li');
                 li.classList.add('nav_item');
@@ -27,7 +28,7 @@ const initNavigation = () => {
             hamburgerMenu.classList.add('hamburger_menu');
             hamburgerMenu.innerHTML = `
                     <img src="../img/hamburger_icon.png" alt="hamburger"> 
-            `
+            `;
             navContainer.appendChild(hamburgerMenu);
 
             hamburgerMenu.onclick = () => {
@@ -36,11 +37,11 @@ const initNavigation = () => {
                 } else {
                     navList.classList.remove('show');
                 }
-            }
+            };
 
             window.onresize = () => {
                 navList.classList.remove('show');
-            }
+            };
 
         })
         .catch(handleError)
