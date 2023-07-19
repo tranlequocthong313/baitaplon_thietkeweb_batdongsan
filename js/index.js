@@ -70,7 +70,7 @@ getRealEstates()
                 <img src="${realEstate.images[0]}" alt="${realEstate.title}" />
                 <div class="real_estate_item_content">
                     <h5 class="line_clamp_2">${realEstate.title}</h5>            
-                    <p>${formatPrice(realEstate.price)} . ${realEstate.area}</p>
+                    <p>${formatPrice(realEstate.price)} . ${realEstate.area} m2</p>
                     <p>${realEstate.address.district}, ${realEstate.address.city}</p>            
                 </div>
             `;
