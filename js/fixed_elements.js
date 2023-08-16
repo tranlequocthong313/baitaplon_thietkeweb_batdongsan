@@ -6,7 +6,7 @@ const initNavigation = () => {
     const navContainer = document.createElement('div')
     navContainer.classList.add("nav_container")
     navContainer.innerHTML = `
-        <h1 class="heading_title animate__hinge">
+        <h1 class="heading_title animate__jackInTheBox">
             <a href="${API_URL}/html/">Bất động sản</a>
         </h1>
     `
