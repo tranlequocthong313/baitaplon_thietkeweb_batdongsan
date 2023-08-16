@@ -60,7 +60,9 @@ const initFooter = () => {
 
 const initToTopButton = () => {
     const toTopButton = document.createElement('button');
-    toTopButton.onclick = () => window.location.href = "#";
+    toTopButton.onclick = () => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
     toTopButton.classList.add("to_top_button");
     toTopButton.classList.add("opacity_hover");
     toTopButton.innerHTML = `
