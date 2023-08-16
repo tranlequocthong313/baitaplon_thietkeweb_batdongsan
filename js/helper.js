@@ -26,7 +26,25 @@ const censorPhoneNumber = (phoneNumber) => {
     return phoneNumber;
 };
 
-const formatPrice = (money) => money.toLocaleString();
+const formatPrice = (money) => {
+    let abs = Math.abs(Number(money))
+    const div = (num) => {
+        return ((abs / num).toFixed(1)).replace('.0', '')
+    }
+    if (abs >= 1e12) {
+        return div(1e12) + ' nghìn tỷ'
+    }
+    if (abs >= 1e9) {
+        return div(1e9) + ' tỷ'
+    }
+    if (abs >= 1e6) {
+        return div(1e6) + ' triệu'
+    }
+    if (abs >= 1e3) {
+        return div(1e3) + ' nghìn'
+    }
+    return money
+}
 
 const placeholders = [
     "Đường Võ Văn Ngân",
